@@ -1,0 +1,377 @@
+[
+  {
+    "id": 0,
+    "name": "MANGO PEOPLE T-SHIRT",
+    "price": "52.00",
+    "img": "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/feature_item_1.jpg",
+    "description": "Compellingly actualize fully researched processes before proactive outsourcing. Progressively syndicate collaborative architectures before cutting-edge services. Completely visualize parallel core competencies rather than exceptional portals.",
+    "slider": [
+      "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/slider4.jpg",
+      "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/slider5.jpg",
+      "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/slider6.jpg"
+    ],
+    "material": "COTTON",
+    "designer": "BINBURHAN",
+    "collection": "MEN",
+    "rating": {
+      "total_rating": 4,
+      "appraisals": [
+        {
+          "user_id": 1,
+          "rating": 4
+        }
+      ]
+    }
+  },
+  {
+    "id": 1,
+    "name": "APPLE PEOPLE T-SHIRT",
+    "price": "52.00",
+    "img": "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/feature_item_2.jpg",
+    "description": "Compellingly actualize fully researched processes before proactive outsourcing. Progressively syndicate collaborative architectures before cutting-edge services. Completely visualize parallel core competencies rather than exceptional portals.",
+    "slider": [
+      "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/slider1.jpg",
+      "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/slider2.jpg",
+      "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/slider3.jpg"
+    ],
+    "material": "COTTON",
+    "designer": "BINBURHAN",
+    "collection": "WOMEN",
+    "rating": {
+      "total_rating": 0,
+      "appraisals": []
+    }
+  },
+  {
+    "id": 2,
+    "name": "APRICOT PEOPLE T-SHIRT",
+    "price": "52.00",
+    "img": "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/feature_item_3.jpg",
+    "description": "Compellingly actualize fully researched processes before proactive outsourcing. Progressively syndicate collaborative architectures before cutting-edge services. Completely visualize parallel core competencies rather than exceptional portals.",
+    "slider": [
+      "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/slider4.jpg",
+      "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/slider5.jpg",
+      "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/slider6.jpg"
+    ],
+    "material": "COTTON",
+    "designer": "BINBURHAN",
+    "collection": "MEN",
+    "rating": {
+      "total_rating": 4.5,
+      "appraisals": [
+        {
+          "user_id": 1,
+          "rating": 5
+        },
+        {
+          "user_id": 2,
+          "rating": 4
+        }
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "name": "AVOCADO PEOPLE T-SHIRT",
+    "price": "52.00",
+    "img": "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/feature_item_4.jpg",
+    "description": "Compellingly actualize fully researched processes before proactive outsourcing. Progressively syndicate collaborative architectures before cutting-edge services. Completely visualize parallel core competencies rather than exceptional portals.",
+    "slider": [
+      "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/slider1.jpg",
+      "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/slider2.jpg",
+      "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/slider3.jpg"
+    ],
+    "material": "COTTON",
+    "designer": "BINBURHAN",
+    "collection": "WOMEN",
+    "rating": {
+      "total_rating": 3.5,
+      "appraisals": [
+        {
+          "user_id": 2,
+          "rating": 2
+        },
+        {
+          "user_id": 1,
+          "rating": 5
+        }
+      ]
+    }
+  },
+  {
+    "id": 4,
+    "name": "PINEAPPLE PEOPLE T-SHIRT",
+    "price": "52.00",
+    "img": "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/feature_item_5.jpg",
+    "description": "Compellingly actualize fully researched processes before proactive outsourcing. Progressively syndicate collaborative architectures before cutting-edge services. Completely visualize parallel core competencies rather than exceptional portals.",
+    "slider": [
+      "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/slider1.jpg",
+      "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/slider2.jpg",
+      "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/slider3.jpg"
+    ],
+    "material": "COTTON",
+    "designer": "BINBURHAN",
+    "collection": "WOMEN",
+    "rating": {
+      "total_rating": 0,
+      "appraisals": []
+    }
+  },
+  {
+    "id": 5,
+    "name": "BANANA PEOPLE T-SHIRT",
+    "price": "52.00",
+    "img": "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/feature_item_6.jpg",
+    "description": "Compellingly actualize fully researched processes before proactive outsourcing. Progressively syndicate collaborative architectures before cutting-edge services. Completely visualize parallel core competencies rather than exceptional portals.",
+    "slider": [
+      "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/slider4.jpg",
+      "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/slider5.jpg",
+      "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/slider6.jpg"
+    ],
+    "material": "COTTON",
+    "designer": "BINBURHAN",
+    "collection": "MEN",
+    "rating": {
+      "total_rating": 3,
+      "appraisals": [
+        {
+          "user_id": 2,
+          "rating": 3
+        }
+      ]
+    }
+  },
+  {
+    "id": 6,
+    "name": "KIWI PEOPLE T-SHIRT",
+    "price": "52.00",
+    "img": "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/feature_item_7.jpg",
+    "description": "Compellingly actualize fully researched processes before proactive outsourcing. Progressively syndicate collaborative architectures before cutting-edge services. Completely visualize parallel core competencies rather than exceptional portals.",
+    "slider": [
+      "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/slider4.jpg",
+      "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/slider5.jpg",
+      "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/slider6.jpg"
+    ],
+    "material": "COTTON",
+    "designer": "BINBURHAN",
+    "collection": "MEN",
+    "rating": {
+      "total_rating": 5,
+      "appraisals": [
+        {
+          "user_id": 2,
+          "rating": 5
+        }
+      ]
+    }
+  },
+  {
+    "id": 7,
+    "name": "GRAPEFRUIT PEOPLE T-SHIRT",
+    "price": "52.00",
+    "img": "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/feature_item_8.jpg",
+    "description": "Compellingly actualize fully researched processes before proactive outsourcing. Progressively syndicate collaborative architectures before cutting-edge services. Completely visualize parallel core competencies rather than exceptional portals.",
+    "slider": [
+      "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/slider4.jpg",
+      "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/slider5.jpg",
+      "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/slider6.jpg"
+    ],
+    "material": "COTTON",
+    "designer": "BINBURHAN",
+    "collection": "MEN",
+    "rating": {
+      "total_rating": 0,
+      "appraisals": []
+    }
+  },
+  {
+    "id": 8,
+    "name": "LIME PEOPLE T-SHIRT",
+    "price": "52.00",
+    "img": "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/feature_item_9.jpg",
+    "description": "Compellingly actualize fully researched processes before proactive outsourcing. Progressively syndicate collaborative architectures before cutting-edge services. Completely visualize parallel core competencies rather than exceptional portals.",
+    "slider": [
+      "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/slider4.jpg",
+      "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/slider5.jpg",
+      "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/slider6.jpg"
+    ],
+    "material": "COTTON",
+    "designer": "BINBURHAN",
+    "collection": "MEN",
+    "rating": {
+      "total_rating": 0,
+      "appraisals": []
+    }
+  },
+  {
+    "id": 9,
+    "name": "LEMON PEOPLE T-SHIRT",
+    "price": "52.00",
+    "img": "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/feature_item_10.jpg",
+    "description": "Compellingly actualize fully researched processes before proactive outsourcing. Progressively syndicate collaborative architectures before cutting-edge services. Completely visualize parallel core competencies rather than exceptional portals.",
+    "slider": [
+      "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/slider4.jpg",
+      "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/slider5.jpg",
+      "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/slider6.jpg"
+    ],
+    "material": "COTTON",
+    "designer": "BINBURHAN",
+    "collection": "MEN",
+    "rating": {
+      "total_rating": 0,
+      "appraisals": []
+    }
+  },
+  {
+    "id": 10,
+    "name": "MELON PEOPLE T-SHIRT",
+    "price": "52.00",
+    "img": "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/feature_item_11.jpg",
+    "description": "Compellingly actualize fully researched processes before proactive outsourcing. Progressively syndicate collaborative architectures before cutting-edge services. Completely visualize parallel core competencies rather than exceptional portals.",
+    "slider": [
+      "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/slider4.jpg",
+      "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/slider5.jpg",
+      "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/slider6.jpg"
+    ],
+    "material": "COTTON",
+    "designer": "BINBURHAN",
+    "collection": "MEN",
+    "rating": {
+      "total_rating": 0,
+      "appraisals": []
+    }
+  },
+  {
+    "id": 11,
+    "name": "NECTARINE PEOPLE T-SHIRT",
+    "price": "52.00",
+    "img": "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/feature_item_12.jpg",
+    "description": "Compellingly actualize fully researched processes before proactive outsourcing. Progressively syndicate collaborative architectures before cutting-edge services. Completely visualize parallel core competencies rather than exceptional portals.",
+    "slider": [
+      "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/slider4.jpg",
+      "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/slider5.jpg",
+      "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/slider6.jpg"
+    ],
+    "material": "COTTON",
+    "designer": "BINBURHAN",
+    "collection": "MEN",
+    "rating": {
+      "total_rating": 0,
+      "appraisals": []
+    }
+  },
+  {
+    "id": 12,
+    "name": "ORANGE PEOPLE T-SHIRT",
+    "price": "52.00",
+    "img": "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/feature_item_13.jpg",
+    "description": "Compellingly actualize fully researched processes before proactive outsourcing. Progressively syndicate collaborative architectures before cutting-edge services. Completely visualize parallel core competencies rather than exceptional portals.",
+    "slider": [
+      "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/slider4.jpg",
+      "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/slider5.jpg",
+      "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/slider6.jpg"
+    ],
+    "material": "COTTON",
+    "designer": "BINBURHAN",
+    "collection": "MEN",
+    "rating": {
+      "total_rating": 0,
+      "appraisals": []
+    }
+  },
+  {
+    "id": 13,
+    "name": "PAPAYA PEOPLE T-SHIRT",
+    "price": "52.00",
+    "img": "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/feature_item_14.jpg",
+    "description": "Compellingly actualize fully researched processes before proactive outsourcing. Progressively syndicate collaborative architectures before cutting-edge services. Completely visualize parallel core competencies rather than exceptional portals.",
+    "slider": [
+      "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/slider4.jpg",
+      "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/slider5.jpg",
+      "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/slider6.jpg"
+    ],
+    "material": "COTTON",
+    "designer": "BINBURHAN",
+    "collection": "MEN",
+    "rating": {
+      "total_rating": 0,
+      "appraisals": []
+    }
+  },
+  {
+    "id": 14,
+    "name": "PEACH PEOPLE T-SHIRT",
+    "price": "52.00",
+    "img": "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/feature_item_15.jpg",
+    "description": "Compellingly actualize fully researched processes before proactive outsourcing. Progressively syndicate collaborative architectures before cutting-edge services. Completely visualize parallel core competencies rather than exceptional portals.",
+    "slider": [
+      "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/slider1.jpg",
+      "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/slider2.jpg",
+      "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/slider3.jpg"
+    ],
+    "material": "COTTON",
+    "designer": "BINBURHAN",
+    "collection": "WOMEN",
+    "rating": {
+      "total_rating": 0,
+      "appraisals": []
+    }
+  },
+  {
+    "id": 15,
+    "name": "PEAR PEOPLE T-SHIRT",
+    "price": "52.00",
+    "img": "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/feature_item_16.jpg",
+    "description": "Compellingly actualize fully researched processes before proactive outsourcing. Progressively syndicate collaborative architectures before cutting-edge services. Completely visualize parallel core competencies rather than exceptional portals.",
+    "slider": [
+      "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/slider1.jpg",
+      "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/slider2.jpg",
+      "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/slider3.jpg"
+    ],
+    "material": "COTTON",
+    "designer": "BINBURHAN",
+    "collection": "WOMEN",
+    "rating": {
+      "total_rating": 0,
+      "appraisals": []
+    }
+  },
+  {
+    "id": 16,
+    "name": "PERSIMMON PEOPLE T-SHIRT",
+    "price": "52.00",
+    "img": "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/feature_item_17.jpg",
+    "description": "Compellingly actualize fully researched processes before proactive outsourcing. Progressively syndicate collaborative architectures before cutting-edge services. Completely visualize parallel core competencies rather than exceptional portals.",
+    "slider": [
+      "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/slider1.jpg",
+      "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/slider2.jpg",
+      "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/slider3.jpg"
+    ],
+    "material": "COTTON",
+    "designer": "BINBURHAN",
+    "collection": "WOMEN",
+    "rating": {
+      "total_rating": 0,
+      "appraisals": []
+    }
+  },
+  {
+    "id": 17,
+    "name": "PASSIONFRUIT PEOPLE T-SHIRT",
+    "price": "52.00",
+    "img": "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/feature_item_18.jpg",
+    "description": "Compellingly actualize fully researched processes before proactive outsourcing. Progressively syndicate collaborative architectures before cutting-edge services. Completely visualize parallel core competencies rather than exceptional portals.",
+    "slider": [
+      "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/slider1.jpg",
+      "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/slider2.jpg",
+      "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/slider3.jpg"
+    ],
+    "material": "COTTON",
+    "designer": "BINBURHAN",
+    "collection": "WOMEN",
+    "rating": {
+      "total_rating": 0,
+      "appraisals": []
+    }
+  }
+]

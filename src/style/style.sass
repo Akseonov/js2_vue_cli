@@ -1,0 +1,2481 @@
+@import "reset"
+@import "vars"
+@import "extends"
+@import "mixins"
+
+html, body
+  height: 100%
+
+body
+  font-family: $main-font
+
+a
+  transition: color 0.5s, background-color 0.5s, outline-color 0.5s, border 0.5s
+
+.wrapper
+  min-height: 100%
+  display: flex
+  flex-direction: column
+
+.top
+  flex-grow: 1
+
+.container
+  width: $site-width
+  margin: 0 auto
+
+.header
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.17)
+  border: 1px solid #ececec
+  background-color: #ffffff
+  height: 96px
+  min-width: $site-width
+
+.header__content
+  height: 100%
+  @extend %space-between
+
+.header__block
+  @extend %align-items
+
+.header__logo
+  color: $text-color
+  padding-top: 4px
+  letter-spacing: 0.6px
+  font-size: 27px
+  font-weight: 300
+  text-transform: uppercase
+  @extend %align-items
+
+  img
+    margin-right: 7px
+    padding-bottom: 5px
+    padding-left: 1px
+
+  span
+    color: $site-color
+    font-weight: 400
+    letter-spacing: 0.68px
+
+.header__form
+  @extend %align-items
+  margin-left: 37px
+
+  label
+    display: none
+
+.form__browse__button
+  border-radius: 3px 0 0 3px
+  border: 1px solid #e6e6e6
+  background-color: #cdcdcc
+  background-image: linear-gradient(to bottom, #f9f9f9 0%, #f5f5f5 100%)
+  padding-right: 9px
+  padding-left: 12px
+  line-height: 36px
+  position: relative
+
+.form__browse
+  color: $text-color
+  +font(14px, 500, 0.1px)
+
+.form__browse::marker
+  display: none
+
+.symbol:after
+  content: "\f0d7"
+  font-family: $icon-font
+  +font(14px, 400, 0.35px)
+  margin-left: 8px
+
+.form__drop
+  @extend %column
+  justify-content: flex-start
+  align-items: flex-start
+  position: absolute
+  left: 0
+  top: 40px
+  width: 262px
+  padding: 19px 0 0 15px
+  background-color: #fff
+  border-radius: 5px
+  box-shadow: 0 0 15px -2px rgba(0, 0, 0, 0.2)
+  z-index: 1
+
+.form__drop::after,
+.form__drop::before
+  content: ''
+  position: absolute
+  background: #fff
+  left: 69px
+  top: -5px
+  width: 10px
+  height: 10px
+  box-shadow: 0 0 15px -2px rgba(0, 0, 0, 0.2)
+  /* Добавляем тень для уголка */
+  z-index: -1
+  transform: rotate(45deg)
+  -webkit-transform: rotate(45deg)
+
+.form__drop::before
+  z-index: 1
+
+.drop__name
+  color: #232323
+  +font(14px, 700, 0.35px)
+  text-transform: uppercase
+
+.drop__hr
+  width: 90%
+  height: 2px
+  background-color: #e8e8e8
+  text-decoration: none
+  border: none
+
+.drop__menu
+  list-style-type: none
+  padding-left: 5px
+  margin-bottom: 19px
+
+.drop__a
+  color: #4f4f4f
+  +font(14px, 400, 0.35px)
+
+.drop__a:hover
+  color: $site-color
+
+.header__form__input
+  border-radius: 0 3px 3px 0
+  border: 1px solid #e6e6e6
+  background-color: #ffffff
+  height: 36px
+  width: 248px
+  margin-left: -1px
+  padding: 0 15px
+  line-height: 36px
+
+.header__form__input:after
+  content: "\f002"
+  font-family: $icon-font
+  color: #a4a4a4
+  +font(14px, 400, 0.35px)
+
+.header__form__input::placeholder
+  font-family: $main-font
+  +font(14px, 300, 0.35px)
+  line-height: 32px
+
+.header__form__button
+  margin-left: -1px
+  border-radius: 0 3px 3px 0
+  border: 1px solid #e6e6e6
+  background-color: #ffffff
+  height: 36px
+  width: 37px
+  @extend %align-items
+  justify-content: center
+  transition: background-color 0.5s
+
+.header__form__button:hover
+  background-color: #f5f5f5
+
+  .fa-search
+    color: #222222
+
+.fa-search
+  color: #a4a4a4
+  +font(14px, 400, 0.35px)
+  transition: color 0.5s
+
+.header__cart__block
+  position: relative
+
+.header__cart
+  margin-right: 27px
+  padding: 14px 2px 5px 7px
+
+.header__cart:hover
+  box-shadow: 5px 5px 5px -2px rgba(0, 0, 0, 0.2)
+  border-radius: 12px
+  margin-right: 27px
+  padding: 14px 2px 5px 7px
+  transition: box-shadow 0.5s linear
+
+.cart__drop
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-direction: column
+  position: absolute
+  left: 0
+  top: 50px
+  width: 262px
+  padding: 19px 0 0 0
+  background-color: #fff
+  border-radius: 5px
+  box-shadow: 0 0 15px -2px rgba(0, 0, 0, 0.2)
+  z-index: 5
+
+.cart__drop::after,
+.cart__drop::before
+  content: ''
+  position: absolute
+  background: #fff
+  left: 25px
+  top: -5px
+  width: 10px
+  height: 10px
+  box-shadow: 0 0 15px -2px rgba(0, 0, 0, 0.2)
+  /* Добавляем тень для уголка */
+  z-index: -1
+  transform: rotate(45deg)
+  -webkit-transform: rotate(45deg)
+
+.cart__drop::before
+  z-index: 1
+
+.cart__drop__list
+  overflow: auto
+  max-height: 255px
+  overflow-y: scroll
+  scrollbar-color: #e8e8e8 #ffffff
+  scrollbar-width: thin
+
+.cart__drop__list::-webkit-scrollbar
+  background-color: #ffffff
+  width: 8px
+
+.cart__drop__list::-webkit-scrollbar-thumb
+  background-color: #e8e8e8
+
+.cart__prod
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  align-items: flex-start
+
+.cart__prod__min
+  display: flex
+
+  .cart__prod__img
+    width: 72px
+    height: 85px
+
+.prod_block
+  margin-left: 14px
+
+.prod__name
+  color: $text-color
+  font-size: 12px
+  font-weight: 900
+  text-transform: uppercase
+  margin-top: 10px
+  margin-bottom: 10px
+  white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis
+  width: 80px
+
+.prod__price
+  color: $site-color
+  font-size: 12px
+  font-weight: 400
+  text-transform: uppercase
+  margin-top: 12px
+
+.prod__icon
+  font-size: 12px
+  color: #ffd100
+
+.remove-cart
+  color: #c0c0c0
+  font-size: 16px
+  font-weight: 400
+  text-transform: uppercase
+  margin-top: 40px
+  margin-left: 55px
+  margin-right: 5px
+  transition: color 0.5s
+
+.remove-cart:hover
+  color: $site-color
+
+.remove-shopping-cart
+  color: #c0c0c0
+  font-size: 16px
+  font-weight: 400
+  text-transform: uppercase
+  transition: color 0.5s
+
+.remove-shopping-cart:hover
+  color: $site-color
+
+.cart__hr
+  width: 100%
+  height: 1px
+  background-color: #e8e8e8
+  text-decoration: none
+  border: none
+  margin: 20px 0
+
+.cart__total
+  @extend %space-between
+  width: 228px
+  margin-top: 10px
+  margin-bottom: 32px
+
+.cart__total__price
+  color: $text-color
+  font-size: 16px
+  font-weight: 700
+  text-transform: uppercase
+
+.cart__button_a
+  display: inline-flex
+  height: 50px
+  width: 225px
+  justify-content: center
+  align-items: center
+  border: 1px solid #eaeaea
+  margin-bottom: 20px
+  color: #4a4a4a
+  font-size: 14px
+  font-weight: 700
+  text-transform: uppercase
+
+.cart__button_a:hover
+  color: $site-color
+  border: 1px solid $site-color
+
+.account
+  position: relative
+
+.account__button
+  color: #ffffff
+  background-color: $site-color
+  +font(15px, 400, 0.38px)
+  height: 36px
+  line-height: 32px
+  padding-left: 16px
+  padding-right: 13px
+  outline: 1px solid $site-color
+  transition: color 0.5s, background-color 0.5s, outline-color 0.5s
+
+.account__button:hover
+  background-color: #fff
+  color: $site-color
+
+.account__block
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-direction: column
+  position: absolute
+  left: -130px
+  top: 45px
+  width: 262px
+  padding: 19px 0 0 0
+  background-color: #fff
+  border-radius: 5px
+  box-shadow: 0 0 15px -2px rgba(0, 0, 0, 0.2)
+  z-index: 5
+
+.account__block::after,
+.account__block::before
+  content: ''
+  position: absolute
+  background: #fff
+  left: 190px
+  top: -5px
+  width: 10px
+  height: 10px
+  box-shadow: 0 0 15px -2px rgba(0, 0, 0, 0.2)
+  /* Добавляем тень для уголка */
+  z-index: -1
+  transform: rotate(45deg)
+  -webkit-transform: rotate(45deg)
+
+.account__form
+  text-align: center
+  color: #222222
+  font-size: 16px
+  font-weight: 700
+  text-transform: uppercase
+  display: flex
+  justify-content: center
+  flex-direction: column
+
+.account__reg
+  display: flex
+  justify-content: center
+  flex-direction: column
+  text-align: center
+
+.account__h2
+  margin: 15px 10px
+
+.account__input
+  border-radius: 0 3px 3px 0
+  border: 1px solid #e6e6e6
+  background-color: #ffffff
+  height: 43px
+  width: 195px
+  padding: 0 15px
+  margin-top: 12px
+  margin-bottom: 12px
+
+.account__massage
+  font-size: 10px
+  font-weight: 500
+  margin-bottom: 10px
+  margin-top: -10px
+
+.account__valid
+  color: green
+
+.account__invalid
+  color: red
+
+.account__login
+  display: inline-flex
+  height: 50px
+  width: 225px
+  justify-content: center
+  align-items: center
+  border: 1px solid #eaeaea
+  margin-bottom: 20px
+  color: #4a4a4a
+  font-size: 14px
+  font-weight: 700
+  text-transform: uppercase
+  background-color: transparent
+  margin-top: 12px
+
+.account__login:hover
+  color: $site-color
+  border: 1px solid $site-color
+
+.account__register
+  display: inline-flex
+  height: 25px
+  justify-content: center
+  align-items: center
+  color: #4a4a4a
+  font-size: 12px
+  font-weight: 500
+  text-transform: uppercase
+  background-color: transparent
+
+.account__register:hover
+  color: $site-color
+
+.menu
+  @extend %align-items
+  justify-content: center
+  list-style-type: none
+  height: 47px
+  padding-bottom: 5px
+
+.menu__list
+  position: relative
+
+.menu__list:hover .drop__flex
+  display: flex
+
+.menu__link
+  color: $text-color
+  font-size: 14px
+  font-weight: 700
+  text-transform: uppercase
+  padding: 16px 23px
+  display: block
+
+.menu__link:hover
+  color: $site-color
+  display: block
+
+.menu__mega
+  border-radius: 5px
+  background-color: #fff
+  padding: 12px 20px 20px
+  border: 1px solid #ececec
+  box-shadow: 0 0 15px -2px rgba(0, 0, 0, 0.2)
+  position: absolute
+  top: 45px
+  z-index: 2
+
+.menu__mega::after,
+.menu__mega::before
+  content: ''
+  position: absolute
+  background: #fff
+  left: 10px
+  top: -5px
+  width: 10px
+  height: 10px
+  box-shadow: 0 0 15px -2px rgba(0, 0, 0, 0.2)
+  /* Добавляем тень для уголка */
+  z-index: -1
+  transform: rotate(45deg)
+  -webkit-transform: rotate(45deg)
+
+.menu__mega::before
+  z-index: 1
+
+.drop__flex
+  display: none
+  margin-right: 46px
+
+.menu__mega__drop
+  width: 235px
+  margin-right: 46px
+
+.menu__mega__drop:last-of-type
+  margin-right: 0
+
+.mega__h3
+  padding-bottom: 8px
+  color: #232323
+  +font(14px, 900, 0.35px)
+  text-transform: uppercase
+  margin-top: 8px
+
+.mega__ul
+  list-style-type: none
+  margin-top: 16px
+
+.mega__link
+  text-decoration: none
+  color: #646464
+  font-size: 14px
+  font-weight: 500
+  letter-spacing: 0.35px
+  line-height: 33px
+
+.mega__link:hover
+  color: $site-color
+
+.promo
+  height: 613px
+  background-color: #e8e8e8
+
+.promo__content
+  height: 100%
+  @extend %align-items
+  background-image: url("https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/promo.jpg")
+  background-position: 5px -53px
+
+.promo__text
+  border-left: 12px solid $site-color
+  padding-left: 12px
+  margin-bottom: 75px
+
+.promo__h3
+  color: $text-color
+  font-size: 60px
+  font-weight: 700
+  text-transform: uppercase
+  line-height: 43px
+  margin-bottom: 19px
+  letter-spacing: 1.8px
+
+.promo__h4
+  color: $text-color
+  font-size: 40px
+  font-weight: 700
+  text-transform: uppercase
+  line-height: 33px
+  letter-spacing: 1.2px
+
+.promo__span
+  color: $site-color
+
+.offer
+  @extend %space-between
+  margin-top: 98px
+
+.offer__item
+  width: 560px
+
+.offer__item:first-of-type
+  margin-bottom: 20px
+
+.offer__item_big1
+  height: 542px
+  background-image: url("https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/offer_big_1.jpg")
+  display: flex
+  align-items: flex-start
+
+.offer__item_big2
+  height: 542px
+  background-image: url("https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/offer_big_2.jpg")
+  display: flex
+  align-items: flex-start
+
+.offer__text
+  background-color: #fff
+  padding: 13px 18px 12px 19px
+  margin-top: 25px
+
+.offer__h4
+  color: $text-color
+  +font(18px, 900, 0.45px)
+  text-transform: uppercase
+
+.offer__h3
+  +font(30px, 900, 0.75px)
+  text-transform: uppercase
+  color: $site-color
+
+.offer__item_mini1
+  height: 261px
+  background-color: #dadad2
+  background-image: url(https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/offer_mini_1.jpg)
+  background-position: 149px 0
+  background-repeat: no-repeat
+  display: flex
+  align-items: flex-start
+
+.offer__item_mini1
+  height: 261px
+
+.offer__item_mini2
+  height: 261px
+  background-image: url(https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/offer_mini_2.jpg)
+  display: flex
+  align-items: flex-start
+
+.feature
+  margin-top: 100px
+
+.feature__header
+  text-align: center
+  color: $text-color
+  +font(30px, 900, 0.6px)
+  line-height: 23px
+
+.feature__h2
+  color: #9f9f9f
+  +font(14px, 400, 0.35px)
+  text-align: center
+  margin-top: 14px
+  margin-bottom: 25px
+  line-height: 12px
+
+.feature__content
+  @extend %space-between
+  flex-wrap: wrap
+
+.feature__item
+  margin-top: 36px
+  width: 263px
+  position: relative
+  transition: box-shadow 0.5s
+
+  img
+    width: 263px
+    height: 281px
+    transition: filter 0.5s
+
+.feature__item:hover
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.16)
+
+.feature__item:hover .feature__a
+  display: flex
+  justify-content: center
+  align-items: center
+
+.feature__item:hover img
+  filter: brightness(50%)
+
+.feature__info
+  padding: 10px 15px 20px 15px
+
+.feature__info__a
+  color: $text-color
+  +font(13px, 400, 0.37px)
+  text-transform: uppercase
+
+.feature__info__a:hover
+  color: $site-color
+
+.feature__a
+  width: 123px
+  height: 39px
+  border: 1px solid #fff
+  border-radius: 3px
+  text-align: center
+  line-height: 39px
+  color: #fff
+  font-size: 13px
+  font-weight: 700
+  position: absolute
+  top: 98px
+  left: 70px
+  display: none
+
+.feature__a_2
+  width: 57px
+  height: 39px
+  border: 1px solid #fff
+  border-radius: 3px
+  text-align: center
+  line-height: 39px
+  color: #fff
+  font-size: 13px
+  font-weight: 700
+  position: absolute
+  top: 146px
+  left: 70px
+  display: none
+
+.feature__a_3
+  width: 57px
+  height: 39px
+  border: 1px solid #fff
+  border-radius: 3px
+  text-align: center
+  line-height: 39px
+  color: #fff
+  font-size: 13px
+  font-weight: 700
+  position: absolute
+  top: 146px
+  left: 136px
+  display: none
+
+.feature__a:before
+  content: ""
+  background-image: url(https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/cart_white.svg)
+  background-size: 23px 23px
+  height: 23px
+  width: 23px
+  margin-right: 10px
+  transition: background-image 0.5s
+
+.feature__a_2:before
+  content: ""
+  background-image: url(https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/star_white.svg)
+  background-size: 23px 23px
+  height: 23px
+  width: 23px
+
+.feature__a_3:before
+  content: ""
+  background-image: url(https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/resive_white.svg)
+  background-size: 23px 23px
+  height: 23px
+  width: 23px
+
+.feature__a:hover
+  color: black
+  background-color: rgba(255, 255, 255, 0.7)
+  border: 1px solid #000
+
+.feature__a_2:hover
+  color: black
+  background-color: rgba(255, 255, 255, 0.7)
+  border: 1px solid #000
+
+.feature__a_3:hover
+  color: black
+  background-color: rgba(255, 255, 255, 0.7)
+  border: 1px solid #000
+
+.feature__a:hover:before
+  background-image: url(https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/cart.svg)
+
+.feature__a_2:hover:before
+  background-image: url(https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/star_white.svg)
+
+.feature__a_3:hover:before
+  background-image: url(https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/resive_white.svg)
+
+.feature__h4
+  color: $site-color
+  font-size: 16px
+  font-weight: 700
+  text-transform: uppercase
+  margin-top: 12px
+
+.feature__button
+  display: flex
+  justify-content: center
+  margin-top: 59px
+  margin-bottom: 112px
+
+.button
+  color: #ffffff
+  background-color: $site-color
+  +font(15px, 400, 1px)
+  height: 46px
+  line-height: 44px
+  padding-left: 22px
+  padding-right: 25px
+  border: 1px solid $site-color
+  transition: color 0.5s, background-color 0.5s
+
+.button:hover
+  background-color: #fff
+  color: $site-color
+
+.symbol__arrow:after
+  content: "\f178"
+  font-family: $icon-font
+  +font(14px, 400, -9.65px)
+  margin-left: 12px
+
+.sales
+  @extend %align-items
+  height: 532px
+  background-color: #222224
+  margin-bottom: 95px
+
+.sales__big
+  position: relative
+
+.sales__layer
+  position: absolute
+  top: 0
+  left: 0
+
+.sales__text
+  position: absolute
+  top: 133px
+  left: 39px
+
+.sales__h3
+  color: #ffffff
+  +font(54px, 700, 1.05px)
+  text-transform: uppercase
+  line-height: 61px
+
+.sales__span
+  font-size: 54px
+  font-weight: 700
+  text-transform: uppercase
+  color: $site-color
+
+.sales__h4
+  color: #ffffff
+  +font(32px, 700, 0.7px)
+  text-transform: uppercase
+
+.sales__mini
+  @extend %column
+  justify-content: space-between
+  padding-bottom: 66px
+
+.sales__h2_1
+  color: #fbfbfb
+  +font(20px, 700, 0.5px)
+  margin-top: 48px
+  display: flex
+
+.sales__h2_1:before
+  content: url("https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/sales_icon1.svg")
+  width: 45px
+  height: 32px
+  margin-left: 36px
+  margin-right: 30px
+
+.sales__h2_2
+  color: #fbfbfb
+  +font(20px, 700, 0.5px)
+  margin-top: 58px
+  display: flex
+
+.sales__h2_2:before
+  content: url("https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/sales_icon2.svg")
+  width: 40px
+  height: 40px
+  margin-left: 36px
+  margin-right: 36px
+  margin-top: -6px
+
+.sales__h2_3
+  color: #fbfbfb
+  +font(20px, 700, 0.5px)
+  margin-top: 52px
+  display: flex
+
+.sales__h2_3:before
+  content: url("https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/sales_icon3.svg")
+  width: 47px
+  height: 35px
+  margin-left: 32px
+  margin-right: 33px
+  margin-top: -6px
+
+.sales__p
+  color: #fbfbfb
+  font-size: 14px
+  font-weight: 300
+  margin-left: 111px
+  margin-right: 43px
+  line-height: 1.7
+  letter-spacing: 0.3px
+  margin-top: 3px
+
+.subscribe
+  @extend %align-items
+  background: url("https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/2-layers.jpg") no-repeat center
+  background-size: cover
+  min-width: $site-width
+
+.subscribe__content
+  @extend %align-items
+
+.subscribe__left
+  width: 50%
+  height: 100%
+  border-right: 0.5px solid #fff
+  align-items: start
+
+.subscribe__right
+  width: 50%
+  height: 100%
+  border-left: 0.5px solid #fff
+
+.subscribe__p
+  color: #222224
+  font-size: 16px
+  font-style: italic
+  letter-spacing: -0.1px
+  display: flex
+  width: 500px
+  line-height: 1.7
+  margin-top: 116px
+
+.subscribe__p:before
+  content: url("https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/subscribe_photo.png")
+  width: 83px
+  height: 83px
+  margin-top: -6px
+  margin-right: 28px
+
+.subscribe__h3
+  margin-top: 7px
+  color: $site-color
+  +font(16px, 700, 0.4px)
+  margin-left: 112px
+
+.subscribe__h4
+  +font(12px, 700, 0.1px)
+  color: #222224
+  margin-left: 112px
+
+.subscribe__ul
+  display: flex
+  list-style-type: none
+  margin-top: 40px
+  margin-left: 115px
+  margin-bottom: 157px
+
+.subscribe__link
+  background-color: #d6d6d6
+  height: 4px
+  width: 38px
+  margin-right: 13px
+  transition: background-color 0.5s
+
+a:focus .subscribe__link
+  background-color: $site-color
+  height: 4px
+  width: 38px
+  margin-right: 13px
+
+a:hover .subscribe__link
+  background-color: $site-color
+
+.subscribe__h2
+  color: #222224
+  +font(24px, 400, 0.6px)
+  text-transform: uppercase
+  margin-left: 217px
+  margin-top: -28px
+
+.subscribe__h3
+  color: #222224
+  +font(14px, 400, 0.35px)
+  text-transform: uppercase
+  margin-left: 146px
+  margin-bottom: 31px
+  margin-top: 3px
+
+.subscribe__form
+  @extend %align-items
+  margin-left: 92px
+
+  label
+    display: none
+
+.subscribe__input
+  border-bottom-left-radius: 23px
+  border-top-left-radius: 23px
+  background-color: #e1e1e1
+  border: 1px solid #e6e6e6
+  height: 46px
+  width: 232px
+  padding: 0 25px
+
+.subscribe__input::placeholder
+  letter-spacing: -0.6px
+  line-height: 46px
+
+.subscribe__button
+  height: 46px
+  padding-left: 20px
+  padding-right: 20px
+  margin-left: -3px
+  border-radius: 0 23px 23px 0
+  background-color: $site-color
+  color: #ffffff
+  +font(14px, 400, 0.35px)
+  border: 1px solid $site-color
+  transition: background-color 0.5s, color 0.5s, outline-color 0.5s
+
+.subscribe__button:hover
+  background-color: #ffffff
+  color: $site-color
+
+.footer__content
+  @extend %space-between
+  margin-top: 111px
+  margin-bottom: 84px
+
+.footer__about
+  width: 427px
+
+.footer__logo
+  color: #222222
+  font-size: 27px
+  font-weight: 300
+  text-transform: uppercase
+  display: flex
+  align-items: center
+
+.footer__logo__img
+  margin-right: 10px
+
+.footer__logo_d
+  color: #f16d7f
+  font-weight: 400
+  letter-spacing: 0.68px
+
+.footer__p
+  color: #898989
+  +font(14px, 300, 0.35px)
+  margin-top: 19px
+  line-height: 24px
+  width: 431px
+
+.footer__p_bot
+  margin-top: 24px
+
+.footer__company
+  width: 105px
+  margin-left: -11px
+  margin-top: 7px
+
+.footer__span
+  color: $site-color
+  +font(18px, 700, 0.45px)
+  text-transform: uppercase
+
+.footer_ul
+  list-style-type: none
+  height: 51px
+  justify-content: center
+  align-items: center
+  margin-top: 36px
+
+.footer_li
+  margin-bottom: 23px
+
+.footer__list
+  color: #898989
+  +font(16px, 400, 0.4px)
+
+.footer__list:hover
+  color: $site-color
+
+.footer__inform
+  width: 150px
+  margin-left: 53px
+  margin-top: 7px
+
+.footer__shop
+  width: 164px
+  margin-right: 33px
+  margin-top: 7px
+
+.copyright
+  height: 79px
+  background-color: #e6e6e6
+  min-width: $site-width
+
+.copyright__content
+  height: 100%
+  @extend %space-between
+  align-items: center
+
+.copyright__span
+  color: #7a7a7a
+  +font(16px, 400, 0.6px)
+
+.copyright__social
+  display: flex
+
+.copyright__social a
+  margin-left: 8px
+
+.copyright__link
+  height: 32px
+  width: 32px
+
+.social1
+  @extend %align-items
+  justify-content: center
+  background-color: #fff
+  transition: background-color 1s
+
+.social1:hover
+  background-color: $site-color
+
+.social1:after
+  content: "\f09a"
+  font-family: $icon-font
+  color: #b2b2b2
+  transition: color 1s
+
+.social1:hover:after
+  color: #f7f7f8
+
+.social2
+  @extend %align-items
+  justify-content: center
+  background-color: #fff
+  transition: background-color 1s
+
+.social2:hover
+  background-color: $site-color
+
+.social2:after
+  content: "\f099"
+  font-family: $icon-font
+  color: #b2b2b2
+  transition: color 1s
+
+.social2:hover:after
+  color: #f7f7f8
+
+.social3
+  @extend %align-items
+  justify-content: center
+  background-color: #fff
+  transition: background-color 1s
+
+.social3:hover
+  background-color: $site-color
+
+.social3:after
+  content: "\f0e1"
+  font-family: $icon-font
+  color: #b2b2b2
+  transition: color 1s
+
+.social3:hover:after
+  color: #f7f7f8
+
+.social4
+  @extend %align-items
+  justify-content: center
+  background-color: #fff
+  transition: background-color 1s
+
+.social4:hover
+  background-color: $site-color
+
+.social4:after
+  content: "\f231"
+  font-family: $icon-font
+  color: #b2b2b2
+  transition: color 1s
+
+.social4:hover:after
+  color: #f7f7f8
+
+.social5
+  @extend %align-items
+  justify-content: center
+  background-color: #fff
+  transition: background-color 1s
+
+.social5:hover
+  background-color: $site-color
+
+.social5:after
+  content: "\f0d5"
+  font-family: $icon-font
+  color: #b2b2b2
+  transition: color 1s
+
+.social5:hover:after
+  color: #f7f7f8
+
+.breadcrumb
+  background-color: #f8f3f4
+  min-width: $site-width
+
+.breadcrumb__content
+  @extend %space-between
+  align-items: center
+  height: 148px
+
+  nav
+    padding-bottom: 3px
+
+.breadcrumb__h1
+  color: $site-color
+  font-size: 24px
+  font-weight: 600
+  text-transform: uppercase
+  padding-bottom: 3px
+
+.breadcrumb__ol
+  font-size: 14px
+  text-transform: uppercase
+  color: #636363
+  font-weight: 500
+  text-decoration: none
+  background-color: #f8f3f4
+  display: flex
+  list-style-type: none
+
+.breadcrumb__item::after
+  content: "/"
+  padding: 0 1px
+
+.breadcrumb__item:last-of-type::after
+  content: ""
+  padding: 0
+
+.breadcrumb__item:last-of-type
+  color: $site-color
+  font-size: 14px
+  font-weight: 700
+  text-transform: uppercase
+
+.breadcrumb__a
+  text-decoration: none
+  color: #000
+  padding-right: 2px
+  padding-left: 2px
+
+.breadcrumb__a:hover
+  color: $site-color
+  font-size: 14px
+  font-weight: 700
+  text-transform: uppercase
+
+.products
+  @extend %space-between
+  margin-top: 58px
+
+.products__sidebar
+  width: 245px
+  margin-right: 49px
+
+.products__category
+  display: inline-block
+  line-height: 32px
+  width: 250px
+  margin-bottom: 18px
+
+.products__category_style
+  color: #6f6e6e
+  font-size: 14px
+  font-weight: 700
+  text-transform: uppercase
+  padding-left: 11px
+  border-left: 5px solid #ef5b70
+  border-bottom: 1px solid #ebebeb
+  transition: color 1s
+
+.products__category_style::marker
+  display: none
+
+details.products__category[open] .products__category_style
+  color: #ef5b70
+
+details.products__category[open] .symbol__aside_1:after
+  content: "\f0d8"
+  font-family: $icon-font
+  color: #ef5b70
+
+details.products__category[open] .symbol__aside_2:after
+  content: "\f0d8"
+  font-family: $icon-font
+  color: #ef5b70
+
+details.products__category[open] .symbol__aside_3:after
+  content: "\f0d8"
+  font-family: $icon-font
+  color: #ef5b70
+
+.symbol__aside_1:after
+  content: "\f0d7"
+  font-family: $icon-font
+  color: #6f6e6e
+  margin-left: 136px
+  transition: color 1s
+
+.symbol__aside_2:after
+  content: "\f0d7"
+  font-family: $icon-font
+  color: #6f6e6e
+  margin-left: 159px
+  transition: color 1s
+
+.symbol__aside_3:after
+  content: "\f0d7"
+  font-family: $icon-font
+  color: #6f6e6e
+  margin-left: 141px
+  transition: color 1s
+
+.products__category__inside
+  padding-left: 17px
+  padding-top: 12px
+  padding-bottom: 16px
+
+.products__nav
+  list-style-type: none
+
+.products__nav__a
+  color: #6f6e6e
+  font-size: 14px
+  font-weight: 400
+  line-height: 32px
+
+.products__nav__a:hover
+  color: #ef5b70
+
+.products__items
+  width: 846px
+  padding-top: 7px
+
+.products__filter
+  margin-bottom: 49px
+
+.products__filter__top
+  @extend %space-between
+  margin-bottom: 41px
+
+.products__filter__block
+  padding-left: 98px
+
+.tending__h1
+  color: #6f6e6e
+  font-size: 14px
+  font-weight: 700
+  text-transform: uppercase
+  margin-bottom: 10px
+
+.trending__conteiner_p
+  display: flex
+
+.trending__a
+  color: #6f6e6e
+  +font(14px, 400, 0.1px)
+  margin-top: 10px
+
+.trending__a::after
+  content: "|"
+  margin: 0 10px
+
+.trending__a:last-of-type::after
+  content: ""
+  margin: 0
+
+.trending__a:hover
+  color: #dfdfdf
+
+.trending__conteiner__input
+  display: flex
+  flex-wrap: wrap
+  width: 276px
+
+  label
+    display: none
+
+.trending__input
+  margin-right: 8px
+  margin-top: 13px
+  margin-left: 2px
+
+.trending__p
+  color: #6f6e6e
+  font-size: 14px
+  font-weight: 400
+  text-transform: uppercase
+  width: 46px
+  margin-top: 9px
+
+.products__filter_img
+  margin-top: 10px
+
+.filter__price_flex
+  @extend %space-between
+  margin-top: 10px
+
+.filter__price_p
+  display: block
+  color: #6f6e6e
+  font-size: 14px
+  font-weight: 400
+
+.products__filter__bottom
+  background-color: #f3f3f3
+  height: 47px
+  @extend %align-items
+  justify-content: flex-start
+
+.products__sort
+  margin-left: 7px
+  display: flex
+  align-content: center
+
+.products__sort_p
+  border: 1px solid #ebebeb
+  background-color: #ffffff
+  height: 30px
+  color: #6f6e6e
+  font-size: 14px
+  font-weight: 400
+  line-height: 30px
+  padding-left: 13px
+  padding-right: 8px
+
+.products__details
+  height: 30px
+  width: 76px
+  padding-left: 9px
+  border: 1px solid #ebebeb
+  background-color: #ffffff
+
+.products__details_2
+  width: 50px
+  height: 30px
+  padding-left: 12px
+  border: 1px solid #ebebeb
+  background-color: #ffffff
+
+.products__summary
+  background-color: #fff
+  color: #6f6e6e
+  font-size: 14px
+  font-weight: 500
+  line-height: 30px
+
+.symbol_filter:after
+  margin-left: 22px
+
+.symbol_filter-2:after
+  margin-left: 19px
+
+.products__summary::marker
+  display: none
+
+.products__drop
+  width: 82px
+  @extend %column
+  position: absolute
+  z-index: 2
+
+.products__drop_2
+  width: 63px
+  @extend %column
+  position: absolute
+  z-index: 2
+
+.products__drop__item
+  background-color: #fff
+  text-align: left
+  padding-left: 12px
+  border: 1px solid #ebebeb
+  height: 30px
+  line-height: 30px
+  color: #6f6e6e
+  font-size: 13px
+  font-weight: 400
+
+.feature__box
+  @extend %space-between
+  flex-wrap: wrap
+  margin-bottom: 5px
+
+.products__feature__item
+  margin-bottom: 37px
+  width: 263px
+  position: relative
+  transition: box-shadow 0.5s
+
+.products__feature__item:hover
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.16)
+
+.products__feature__item img
+  width: 263px
+  height: 280px
+  transition: filter 0.5s
+
+.products__feature__item:hover img
+  filter: brightness(50%)
+
+.products__feature__item:hover .feature__a
+  @extend %align-items
+  justify-content: center
+
+.products__feature__item:hover .feature__a_2
+  @extend %align-items
+  justify-content: center
+
+.products__feature__item:hover .feature__a_3
+  @extend %align-items
+  justify-content: center
+
+.products__view
+  @extend %space-between
+  margin-bottom: 110px
+
+.products__pages
+  border-radius: 3px
+  border: 1px solid #ebebeb
+  background-color: #ffffff
+  @extend %align-items
+  justify-content: center
+
+.products__pages_numb
+  color: #c4c4c4
+  font-size: 16px
+  font-weight: bold
+  margin-right: 15px
+
+.products__pages_numb:hover
+  color: #ef5b70
+
+.products__pages_numb:last-of-type
+  margin-right: 0
+
+.product__active
+  color: $site-color
+
+.product__last::before
+  content: '...'
+  margin-right: 15px
+
+.product__first::after
+  content: '...'
+  margin-left: 15px
+
+.fa-chevron-right
+  color: #aaaaaa
+  font-size: 20px
+  font-weight: bold
+  letter-spacing: 0.35px
+  transition: color 0.5s
+  margin-right: 15px
+
+.fa-chevron-left
+  color: #aaaaaa
+  font-size: 20px
+  font-weight: bold
+  letter-spacing: 0.35px
+  margin-right: 15px
+  margin-left: 15px
+  transition: color 0.5s
+
+.fa-chevron-left:hover
+  color: #ef5b70
+
+.fa-chevron-right:hover
+  color: #ef5b70
+
+.products__button
+  border-radius: 3px
+  border: 1px solid #ef5b70
+  background-color: #ffffff
+
+.products__button_a
+  display: block
+  color: #ef5b70
+  font-size: 16px
+  font-weight: bold
+  padding: 12px 45px
+  transition: color 0.5s, background-color 0.5s
+
+.products__button_a:hover
+  background-color: #ef5b70
+  color: #fff
+
+.sales__prod
+  background-color: #222224
+  min-width: $site-width
+
+.sales__mini__cat
+  display: flex
+  justify-content: space-around
+  align-items: center
+  padding-top: 89px
+  padding-bottom: 109px
+
+.sales__container__cat
+  @extend %column
+  align-items: center
+  width: 308px
+  justify-content: center
+
+.sales__korona
+  margin-bottom: 32px
+
+.sales__car
+  margin-bottom: 23px
+
+.sales__pros
+  margin-bottom: 29px
+
+.sales__h2_cat
+  color: #fbfbfb
+  +font(20px, 700, 0.5px)
+  margin-bottom: 10px
+  margin-top: -5px
+
+.sales__p_cat
+  color: #fbfbfb
+  +font(14px, 300, 0.30px)
+  line-height: 25px
+  text-align: justify
+
+.slider
+  @extend %space-between
+  align-items: center
+  position: relative
+  z-index: 0
+
+.slider__img
+  min-height: 777px
+  min-width: $site-width
+  object-fit: cover
+
+.arrow_left
+  width: 47px
+  height: 47px
+  background-color: rgba(0, 0, 0, 0.2)
+  text-align: center
+  line-height: 47px
+  position: absolute
+
+.arrow_left:hover::after
+  color: $site-color
+
+.arrow_left::after
+  content: "\f104"
+  font-family: $icon-font
+  color: #ffffff
+  font-size: 24px
+  font-weight: 400
+  transition: color 0.5s
+
+.arrow_right
+  width: 47px
+  height: 47px
+  background-color: rgba(0, 0, 0, 0.2)
+  text-align: center
+  line-height: 47px
+  position: absolute
+  right: 0
+
+.arrow_right:hover::after
+  color: $site-color
+
+.arrow_right::after
+  content: "\f105"
+  font-family: $icon-font
+  color: #ffffff
+  font-size: 24px
+  font-weight: 400
+  transition: color 0.5s
+
+.product__description
+  border: 1px solid #eaeaea
+  @extend %column
+  align-items: center
+  position: relative
+  top: -86px
+  background-color: #fff
+  margin-bottom: 26px
+
+.product__description__h3
+  display: inline-block
+  color: $site-color
+  font-size: 14px
+  font-weight: 700
+  text-transform: uppercase
+  margin-top: 66px
+  padding-bottom: 15px
+  margin-bottom: 13px
+  border-bottom: 1px solid #eaeaea
+  position: relative
+  z-index: 1
+
+.product__description__h3::before
+  border-bottom: 3px solid $site-color
+  content: ""
+  position: absolute
+  top: -2px
+  left: 30%
+  display: block
+  width: 40%
+  min-height: 31px
+  z-index: 10
+
+.product__description__h1
+  color: #4d4d4d
+  font-size: 18px
+  font-weight: 700
+  text-transform: uppercase
+  text-align: center
+  margin-bottom: 55px
+
+.product__description__text
+  width: 620px
+  text-align: center
+  color: #5e5e5e
+  font-size: 14px
+  font-weight: 300
+  line-height: 24px
+  margin-bottom: 20px
+
+.product__description__box
+  display: flex
+  margin-bottom: 31px
+
+.product__description__box__p
+  color: #b9b9b9
+  font-size: 14px
+  font-weight: 700
+  text-transform: uppercase
+  margin-right: 44px
+
+.product__description__box__p:last-of-type
+  margin-right: 0
+
+.product__description__box__p span
+  color: #2f2f2f
+
+.product__description__price
+  color: #ef5b70
+  font-size: 24px
+  font-weight: 700
+  margin-bottom: 40px
+  margin-right: 24px
+
+.product__description__hr
+  width: 642px
+  height: 1px
+  background-color: #eaeaea
+  text-decoration: none
+  border: none
+  margin-bottom: 59px
+
+.product__description__choose
+  width: 540px
+  @extend %space-between
+
+.product__description__choose__b
+  width: 143px
+
+  label
+    display: none
+
+.product__description__choose__p
+  color: #2f2f2f
+  font-size: 14px
+  font-weight: 700
+  text-transform: uppercase
+
+.product__description__choose__details
+  width: 100%
+  height: 33px
+  text-align: center
+  border: 1px solid #eaeaea
+  margin-top: 13px
+  position: relative
+
+.product__description__choose__summary
+  color: #b1b1b1
+  font-size: 13px
+  font-weight: 300
+  line-height: 33px
+  text-align: left
+  padding-left: 14px
+  display: flex
+
+.product__description__choose__summary1
+  color: #b1b1b1
+  font-size: 13px
+  font-weight: 300
+  line-height: 33px
+  text-align: left
+  padding-left: 15px
+  display: flex
+
+.product__description__choose__summary::before
+  content: ""
+  display: inline-block
+  line-height: 35px
+  margin-top: 10px
+  margin-right: 10px
+  width: 12px
+  height: 12px
+  background-color: red
+
+.product__description__choose__symbol:after
+  content: "\f107"
+  font-family: $icon-font
+  +font(14px, 400, 0.35px)
+  margin-left: 68px
+
+.product__description__choose__symbol1:after
+  content: "\f107"
+  font-family: $icon-font
+  +font(14px, 400, 0.35px)
+  margin-left: 88px
+
+.product__description__choose__summary::marker
+  display: none
+
+.product__description__choose__summary1::marker
+  display: none
+
+.products__drop__3
+  position: absolute
+  z-index: 20
+  background: #fff
+  width: 134px
+
+.products__drop__item1
+  background-color: #fff
+  text-align: left
+  padding-left: 10px
+  border: 1px solid #ebebeb
+  height: 30px
+  line-height: 30px
+  color: #bcbcbc
+  font-size: 13px
+  font-weight: 400
+
+.products__drop__item1::before
+  content: ""
+  display: inline-block
+  line-height: 35px
+  margin-top: 12px
+  margin-right: 10px
+  width: 12px
+  height: 12px
+  background-color: green
+
+.products__drop__item2
+  background-color: #fff
+  text-align: left
+  padding-left: 10px
+  border: 1px solid #ebebeb
+  height: 30px
+  line-height: 30px
+  color: #bcbcbc
+  font-size: 13px
+  font-weight: 400
+
+.products__drop__item2::before
+  content: ""
+  display: inline-block
+  line-height: 35px
+  margin-top: 12px
+  margin-right: 10px
+  width: 12px
+  height: 12px
+  background-color: blue
+
+.products__drop__item3
+  background-color: #fff
+  text-align: left
+  padding-left: 10px
+  border: 1px solid #ebebeb
+  height: 30px
+  line-height: 30px
+  color: #bcbcbc
+  font-size: 13px
+  font-weight: 400
+
+.product__description__choose__input
+  width: 126px
+  height: 33px
+  text-align: center
+  border: 1px solid #eaeaea
+  margin-top: 13px
+
+.product__description__choose__input:placeholder-shown
+  color: #bcbcbc
+  font-size: 14px
+  font-weight: 300
+  text-align: left
+  padding-left: 14px
+
+.product__description__button
+  padding-left: 43px
+  margin-top: 28px
+  margin-bottom: 122px
+  height: 53px
+  border: 1px solid #ef5b70
+  width: 493px
+  text-align: center
+  line-height: 55px
+  color: #ef5b70
+  display: inline-flex
+  justify-content: center
+  position: relative
+
+.product__description__button::before
+  content: ""
+  position: absolute
+  background-image: url(https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/cart_pink.svg)
+  background-size: 26px 26px
+  height: 26px
+  width: 26px
+  top: 14px
+  left: 207px
+  margin-right: 15px
+  transition: background-image 0.5s
+
+.product__description__button:hover
+  background-color: #ef5b70
+  color: #fff
+
+.product__description__button:hover::before
+  content: ""
+  position: absolute
+  background-image: url(https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/cart_white.svg)
+  background-size: 26px 26px
+  height: 26px
+  width: 26px
+  top: 14px
+  left: 207px
+
+.you-may-like
+  margin-bottom: 73px
+
+.you-may-like__h1
+  color: #4d4d4d
+  font-size: 24px
+  font-weight: 700
+  text-transform: uppercase
+  margin-bottom: 31px
+  text-align: center
+
+.you-may-like__cont
+  @extend %space-between
+
+.checkout
+  margin-top: 58px
+  margin-bottom: 93px
+
+.checkout__summary
+  color: $text-color
+  font-size: 16px
+  font-weight: 700
+  text-transform: uppercase
+  height: 72px
+  border-top: 1px solid #e8e8e8
+  border-bottom: 1px solid #e8e8e8
+  line-height: 72px
+  margin-bottom: -1px
+
+.checkout__summary::marker
+  display: none
+
+.checkout__details__content
+  margin: 50px 0 78px 34px
+  display: flex
+
+.checkout__details__left
+  margin-right: 292px
+
+.checkout__details__h1
+  color: $text-color
+  font-size: 13px
+  font-weight: 700
+  text-transform: uppercase
+  margin-bottom: 10px
+
+.checkout__details__p
+  color: #b3b2b2
+  font-size: 13px
+  font-weight: 400
+
+.checkout__radio
+  color: $text-color
+  font-size: 12px
+  font-weight: 700
+  text-transform: uppercase
+  margin-top: 30px
+
+.checkout__radio__1
+  color: $text-color
+  font-size: 12px
+  font-weight: 700
+  text-transform: uppercase
+  margin-top: 13px
+  margin-bottom: 28px
+
+.checkout__radio__2
+  color: $text-color
+  font-size: 12px
+  font-weight: 700
+  text-transform: uppercase
+  margin-top: 15px
+
+.checkout__radio__2::after
+  content: " *"
+  font-size: 17px
+  color: #ff0d0d
+
+.checkout__reg
+  color: $text-color
+  font-size: 13px
+  font-weight: 400
+  text-transform: uppercase
+  margin-bottom: 9px
+
+.checkout__details__p1
+  color: #b3b2b2
+  font-size: 13px
+  font-weight: 400
+  margin-bottom: 10px
+
+.checkout__details__p1::before
+  content: "\f101"
+  font-family: $icon-font
+  +font(14px, 400, 0.35px)
+  margin-right: 3px
+
+.checkout__details__p2
+  color: #b3b2b2
+  font-size: 13px
+  font-weight: 400
+  margin-bottom: 28px
+
+.checkout__details__a
+  color: #4a4a4a
+  font-size: 14px
+  font-weight: 700
+  text-transform: uppercase
+  border: 1px solid #eaeaea
+  width: 180px
+  height: 50px
+  display: block
+  text-align: center
+  line-height: 50px
+  margin-top: 38px
+
+.checkout__details__a:hover
+  color: #ff0d0d
+  border: 1px solid #ff0d0d
+
+.checkout__form
+  border-radius: 0 3px 3px 0
+  border: 1px solid #e6e6e6
+  background-color: #ffffff
+  height: 43px
+  width: 359px
+  margin-left: -1px
+  padding: 0 15px
+  margin-top: 12px
+
+.checkout__req
+  color: #ff0d0d
+  font-size: 13px
+  font-weight: 400
+  margin-top: 19px
+
+.checkout__log
+  display: flex
+
+.checkout__log__con
+  display: flex
+
+.checkout__log__a
+  color: #4a4a4a
+  font-size: 14px
+  font-weight: 700
+  text-transform: uppercase
+  border: 1px solid #eaeaea
+  width: 180px
+  height: 47px
+  display: block
+  text-align: center
+  line-height: 47px
+  margin-top: 32px
+
+.checkout__log__a:hover
+  color: #ff0d0d
+  border: 1px solid #ff0d0d
+
+.checkout__log__a__2
+  display: block
+  color: $text-color
+  font-size: 14px
+  font-weight: 400
+  margin-top: 51px
+  margin-left: 30px
+
+.shopping-cart
+  margin-top: 86px
+  margin-bottom: 78px
+
+.shopping-cart__h
+  @extend %space-between
+  margin-bottom: 16px
+
+.shopping-cart__box1
+  width: 463px
+  display: flex
+
+.shopping-cart__box2
+  width: 14%
+  text-align: center
+
+.shopping-cart__box3
+  width: 12%
+  text-align: center
+
+.shopping-cart__box4
+  width: 11%
+  text-align: center
+
+.shopping-cart__box5
+  width: 12%
+  text-align: center
+
+.shopping-cart__box6
+  width: 5%
+  text-align: center
+
+.shopping-cart__h1
+  color: $text-color
+  +font(13px, 700, -0.2px)
+  text-transform: uppercase
+
+.shopping-cart__center
+  @extend %align-items
+  justify-content: center
+
+.shopping-cart__item
+  @extend %space-between
+  border-top: 1px solid #eaeaea
+  //padding: 25px 0
+  padding-bottom: 23px
+  padding-top: 25px
+
+.shopping-cart__item_l
+  border-bottom: 1px solid #eaeaea
+
+.shopping-cart__box1__img
+  margin-right: 18px
+
+.shopping-cart__img
+  width: 100px
+  height: 115px
+
+.shopping-cart__box
+  margin-top: 10px
+
+.shopping-cart__h1
+  color: #222222
+  font-family: $main-font
+  font-size: 13px
+  font-weight: 600
+  letter-spacing: -0.2px
+
+.shopping-cart__h2
+  color: #222222
+  font-family: $main-font
+  font-size: 13px
+  font-weight: 700
+  letter-spacing: 0.4px
+  text-transform: uppercase
+
+.shopping-cart__box1__p0
+  margin-bottom: 1px
+  color: #6f6e6e
+  margin-top: 31px
+  letter-spacing: -0.7px
+
+.shopping-cart__box1__p1
+  margin-bottom: 5px
+  color: #6f6e6e
+  letter-spacing: -0.7px
+
+.shopping-cart__box1__span
+  color: #575757
+  font-weight: 700
+
+.shopping-cart_box1_p
+  color: $text-color
+  font-size: 13px
+  font-weight: 700
+  text-transform: uppercase
+  margin: 13px 0 28px 0
+
+.shopping-cart__box1__p2
+  color: #656565
+  font-size: 13px
+  font-weight: 500
+
+.shopping-cart__box1__input
+  width: 54px
+  height: 30px
+  text-align: center
+  border: 1px solid #eaeaea
+  color: #656565
+  -moz-appearance: textfield
+
+.shopping-cart__box1__input::-webkit-outer-spin-button,
+.shopping-cart__box1__input::-webkit-inner-spin-button
+  -webkit-appearance: none
+  appearance: none
+  -moz-appearance: none
+  margin: 0
+
+.shopping-cart__box1__p3
+  color: #656565
+  font-size: 13px
+  font-weight: 400
+  text-transform: uppercase
+
+.shopping-cart__box6__i
+  color: #c0c0c0
+  font-size: 16px
+  font-weight: 400
+  text-transform: uppercase
+  transition: color 0.5s
+
+.shopping-cart__box6__i:hover
+  color: $site-color
+
+.shopping-cart__button
+  @extend %space-between
+  margin-bottom: 57px
+
+.shopping-cart__a
+  color: #4a4a4a
+  font-size: 14px
+  font-weight: 700
+  text-transform: uppercase
+  border: 1px solid #eaeaea
+  padding: 0 39px
+  display: block
+  text-align: center
+  line-height: 50px
+  margin-top: 42px
+
+.shopping-cart__a:hover
+  color: $site-color
+  border: 1px solid $site-color
+
+.shopping-cart__proceed
+  @extend %space-between
+
+.shopping-cart__proceed_box1
+  width: 30%
+
+.shopping-cart__proceed_box2
+  width: 30%
+  margin-left: 10px
+
+.shopping-cart__proceed_box3
+  @extend %column
+  width: 25%
+  height: 174px
+  padding: 41px 41px 0 41px
+  background-color: #f5f3f3
+  align-items: flex-end
+
+.shopping-cart_h1
+  color: $text-color
+  font-size: 16px
+  font-weight: 700
+  text-transform: uppercase
+
+.shopping-cart__details
+  width: 352px
+  height: 45px
+  text-align: center
+  border: 1px solid #eaeaea
+  margin-top: 18px
+
+.shopping-cart__summary
+  color: #b1b1b1
+  font-size: 13px
+  font-weight: 300
+  line-height: 45px
+  text-align: left
+  padding-left: 16px
+
+.shopping-cart__summary::marker
+  display: none
+
+.shopping-cart__symbol:after
+  content: "\f0d7"
+  font-family: $icon-font
+  +font(14px, 400, 0.35px)
+  margin-left: 252px
+
+.products__drop__item_cart
+  background-color: #fff
+  text-align: left
+  padding-left: 12px
+  border: 1px solid #ebebeb
+  height: 30px
+  line-height: 30px
+  color: #6f6e6e
+  font-size: 13px
+  font-weight: 400
+
+.products__drop_cart
+  width: 342px
+  @extend %column
+  position: absolute
+  z-index: 2
+
+.shopping-cart__input
+  width: 317px
+  padding: 9px 20px 16px 15px
+  border: 1px solid #eaeaea
+  margin-top: 19px
+
+.shopping-cart__input::placeholder
+  color: #b1b1b1
+  font-size: 13px
+  font-weight: 300
+  line-height: 42px
+
+.shopping-cart__input::-webkit-input-placeholder
+  color: #b1b1b1
+  font-size: 13px
+  font-weight: 300
+  line-height: 42px
+
+.shopping-cart__input::-moz-placeholder
+  color: #b1b1b1
+  opacity: 1
+  font-size: 13px
+  font-weight: 300
+  line-height: 21px
+  padding: 9px 20px 16px 15px
+
+.shopping-cart__input_m
+  margin-top: 24px
+
+.shopping-cart__proceed__a
+  display: inline-block
+  border: 1px solid #eaeaea
+  height: 35px
+  padding: 0 14px
+  margin-top: 22px
+  line-height: 35px
+  text-align: center
+  color: #4a4a4a
+  font-size: 11px
+  font-weight: 700
+  text-transform: uppercase
+
+.shopping-cart__proceed__a:hover
+  border: 1px solid $site-color
+  color: $site-color
+
+.shopping-cart__proceed__box3__a
+  display: inline-block
+  background-color: $site-color
+  height: 50px
+  padding: 0 42px
+  line-height: 50px
+  text-align: center
+  color: #ffffff
+  font-size: 16px
+  font-weight: 700
+  text-transform: uppercase
+  border: 1px solid #f5f3f3
+
+.shopping-cart__proceed__box3__a:hover
+  background-color: #fff
+  border: 1px solid $site-color
+  color: $site-color
+
+.shopping-cart_p
+  color: #000000
+  font-size: 14px
+  font-weight: 300
+  margin-top: 23px
+
+.shopping-cart__proceed_box3
+  width: 277px
+
+.shopping-cart__proceed_box3_p
+  color: #4a4a4a
+  font-size: 11px
+  font-weight: 400
+  text-transform: uppercase
+  letter-spacing: 0.4px
+  padding-top: 1px
+
+.shopping-cart__proceed_box3_p2
+  color: $text-color
+  font-size: 16px
+  font-weight: 700
+  text-transform: uppercase
+  margin-top: 14px
+  letter-spacing: 0.2px
+
+.shopping-cart__proceed_box3_p2 span
+  color: $site-color
+
+.shopping-cart__proceed_box3_hr
+  background-color: #e2e2e2
+  width: 100%
+  height: 1px
+  text-decoration: none
+  border: none
+  margin-bottom: 16px
+  margin-top: 20px
+
+.notification
+  position: fixed
+  display: flex
+  justify-content: center
+  align-items: center
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  background-color: #ffffff
+
+.notification__content
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-direction: column
+  padding: 50px 40px
+
+.notification__p
+  margin-bottom: 20px
+  text-transform: uppercase
+

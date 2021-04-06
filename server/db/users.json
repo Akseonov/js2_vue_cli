@@ -1,0 +1,71 @@
+[
+  {
+    "id": 1,
+    "username": "Good",
+    "password": "$2b$10$QT8ogvRlU/Fh.Sb6btPFqOBsnRzrj8vKe/XSeO.Bav1NOT0GryD1m",
+    "cart": {
+      "total": 0,
+      "count": 0,
+      "contents": []
+    },
+    "rating": [
+      {
+        "product_id": 0,
+        "rating": 4
+      },
+      {
+        "product_id": 2,
+        "rating": 5
+      },
+      {
+        "product_id": 3,
+        "rating": 5
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "username": "Bad",
+    "password": "$2b$10$QT8ogvRlU/Fh.Sb6btPFqOBsnRzrj8vKe/XSeO.Bav1NOT0GryD1m",
+    "cart": {
+      "total": 1040,
+      "count": 20,
+      "contents": [
+        {
+          "product_id": 2,
+          "name": "APRICOT PEOPLE T-SHIRT",
+          "price": "52.00",
+          "amount": 10,
+          "img": "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/feature_item_3.jpg",
+          "rating": 4.5
+        },
+        {
+          "product_id": 3,
+          "name": "AVOCADO PEOPLE T-SHIRT",
+          "price": "52.00",
+          "amount": 10,
+          "img": "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/feature_item_4.jpg",
+          "rating": 3.5
+        }
+      ]
+    },
+    "rating": [
+      {
+        "product_id": 5,
+        "rating": 3
+      },
+      {
+        "product_id": 3,
+        "rating": 2
+      },
+      {
+        "product_id": 2,
+        "rating": 4
+      },
+      {
+        "product_id": 6,
+        "rating": 5
+      }
+    ]
+  }
+]
