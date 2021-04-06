@@ -57,7 +57,7 @@
     "designer": "BINBURHAN",
     "collection": "MEN",
     "rating": {
-      "total_rating": 4.5,
+      "total_rating": 5,
       "appraisals": [
         {
           "user_id": 1,
@@ -65,7 +65,7 @@
         },
         {
           "user_id": 2,
-          "rating": 4
+          "rating": 5
         }
       ]
     }

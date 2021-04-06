@@ -79,12 +79,22 @@ export default {
 
   actions: {
     postRating(context, arg) {
+      let query = '';
+      if (localStorage.getItem('id')) {
+        query = {
+          id: localStorage.getItem('id'),
+        }
+      }
+      context.commit('setUrl', query, { root: true });
+
+      let localUrl = `${context.getters['url']}${context.rootGetters.url}`;
+
       let obj = {
         rating: arg.rating,
         product_id: arg.product_id,
         user_id: arg.user_id,
       };
-      postItem(context.getters['url'], obj, arg.token)
+      postItem(localUrl, obj, arg.token)
         .then(res => {
             if (res.status === 401 && res.code === "invalid_token") {
               context.dispatch('logout', {root: true});

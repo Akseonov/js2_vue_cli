@@ -28,8 +28,8 @@
     "username": "Bad",
     "password": "$2b$10$QT8ogvRlU/Fh.Sb6btPFqOBsnRzrj8vKe/XSeO.Bav1NOT0GryD1m",
     "cart": {
-      "total": 1040,
-      "count": 20,
+      "total": 520,
+      "count": 10,
       "contents": [
         {
           "product_id": 2,
@@ -37,15 +37,7 @@
           "price": "52.00",
           "amount": 10,
           "img": "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/feature_item_3.jpg",
-          "rating": 4.5
-        },
-        {
-          "product_id": 3,
-          "name": "AVOCADO PEOPLE T-SHIRT",
-          "price": "52.00",
-          "amount": 10,
-          "img": "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/feature_item_4.jpg",
-          "rating": 3.5
+          "rating": 5
         }
       ]
     },
@@ -60,7 +52,7 @@
       },
       {
         "product_id": 2,
-        "rating": 4
+        "rating": 5
       },
       {
         "product_id": 6,

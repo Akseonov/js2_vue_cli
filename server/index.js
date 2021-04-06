@@ -101,19 +101,20 @@ server.get('/catalog/:id', (req, res) => {
   });
 });
 
-server.get('/catalog?inquiry', (req,res) => {
-  fs.readFile('./server/db/catalog.json', 'utf-8', (err, data) => {
-    if (!err) {
-      const items = catalog.filterItems(JSON.parse(data), req.query.inquiry);
-      res.json(items);
-    }
-  })
-});
+// server.get('/catalog?inquiry', (req,res) => {
+//   fs.readFile('./server/db/catalog.json', 'utf-8', (err, data) => {
+//     if (!err) {
+//       const items = catalog.filterItems(JSON.parse(data), req.query.inquiry);
+//       console.log('catalog?inquiry');
+//       res.json(items);
+//     }
+//   })
+// });
 
 server.get('/cart', jwtMW, (req, res) => {
   if (req.headers.authorization) {
     fs.readFile('./server/db/users.json', 'utf-8', (err, data) => {
-      let user = JSON.parse(data).find(user => +user.id === 2);
+      let user = JSON.parse(data).find(user => +user.id === +req.query.id);
       if (!err) {
         res.json(user.cart);
       }
@@ -132,7 +133,7 @@ server.post('/cart', jwtMW, (req, res) => {
     fs.readFile('./server/db/users.json', 'utf-8', (err, data) => {
       if (!err) {
         let users = JSON.parse(data);
-        let user = users.find(user => +user.id === 2);
+        let user = users.find(user => +user.id === +req.query.id);
         cart.add(user.cart, req.body);
         writer('./server/db/users.json', users)
           .then(status => {
@@ -159,7 +160,6 @@ server.post('/cart', jwtMW, (req, res) => {
       }
     });
   }
-
 });
 
 server.put('/cart/:id', jwtMW, (req, res) => {
@@ -167,7 +167,7 @@ server.put('/cart/:id', jwtMW, (req, res) => {
     fs.readFile('./server/db/users.json', 'utf-8', (err, data) => {
       if (!err) {
         let users = JSON.parse(data);
-        let user = users.find(user => +user.id === 2);
+        let user = users.find(user => +user.id === +req.query.id);
         cart.change(user.cart, req.params.id, req.body.amount);
         writer('./server/db/users.json', users)
           .then(status => {
@@ -201,7 +201,7 @@ server.delete('/cart/:id', jwtMW, (req, res) => {
     fs.readFile('./server/db/users.json', 'utf-8', (err, data) => {
       if (!err) {
         let users = JSON.parse(data);
-        let user = users.find(user => +user.id === 2);
+        let user = users.find(user => +user.id === +req.query.id);
         cart.del(user.cart, req.params.id, req.body.amount);
         writer('./server/db/users.json', users)
           .then(status => {
@@ -239,7 +239,7 @@ server.post('/rating', jwtMW, (req, res) => {
           rating: req.body.rating,
         };
         let users = JSON.parse(data);
-        let user = users.find(user => +user.id === 2);
+        let user = users.find(user => +user.id === +req.query.id);
         let rating = user.rating.find(el => +el.product_id === +req.body.product_id);
         if (rating) {
           rating.product_id = req.body.product_id;
@@ -277,7 +277,7 @@ server.post('/rating', jwtMW, (req, res) => {
         fs.readFile('./server/db/users.json', 'utf-8', (err, dataOne) => {
           if (!err) {
             let users = JSON.parse(dataOne);
-            let user = users.find(user => +user.id === 2);
+            let user = users.find(user => +user.id === +req.query.id);
             let product = user.cart.contents.find(el => +el.product_id === +req.body.product_id);
             product.rating = sum / item.rating.appraisals.length;
             writer('./server/db/users.json', users)

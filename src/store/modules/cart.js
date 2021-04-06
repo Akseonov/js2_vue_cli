@@ -59,6 +59,15 @@ export default {
       let items = context.getters['items'];
       let find = items.find(el => (el.product_id === arg.item.id) || (el.product_id === arg.item.product_id));
 
+      let query = '';
+      if (localStorage.getItem('id')) {
+        query = {
+          id: localStorage.getItem('id'),
+        }
+      }
+      context.commit('setUrl', query, { root: true });
+
+
       if (!find) {
         const obj = {
           product_id: arg.item.id,
@@ -69,7 +78,9 @@ export default {
           rating: arg.item.rating.total_rating,
         };
 
-        postItem(context.getters['url'], obj, arg.token)
+        let localUrl = `${context.getters['url']}${context.rootGetters.url}`;
+
+        postItem(localUrl, obj, arg.token)
           .then(res => {
             if (res.status === 401 && res.code === "invalid_token") {
               context.dispatch('logout', res.code , { root: true });
@@ -83,7 +94,8 @@ export default {
             }
           });
       } else {
-        putItem(`${context.getters['url']}/${find.product_id}`, arg.amount, arg.token)
+        let localUrl = `${context.getters['url']}/${find.product_id}${context.rootGetters.url}`;
+        putItem(localUrl, arg.amount, arg.token)
           .then(res => {
             if (res.status === 401 && res.code === "invalid_token") {
               context.dispatch('logout', res.code , { root: true });
@@ -102,8 +114,17 @@ export default {
       let items = context.getters['items'];
       let find = items.find(el => el.product_id === arg.itemId);
 
+      let query = '';
+      if (localStorage.getItem('id')) {
+        query = {
+          id: localStorage.getItem('id'),
+        }
+      }
+      context.commit('setUrl', query, { root: true });
+      let localUrl = `${context.getters['url']}/${find.product_id}${context.rootGetters.url}`;
+
       if (find.amount + arg.amount >= 1) {
-        putItem(`${context.getters['url']}/${find.product_id}`, arg.amount, arg.token)
+        putItem(`${localUrl}`, arg.amount, arg.token)
           .then(res => {
             if (res.status === 401 && res.code === "invalid_token") {
               context.dispatch('logout', res.code , { root: true });
@@ -116,7 +137,7 @@ export default {
             }
           });
       } else {
-        deleteItem(`${context.getters['url']}/${find.product_id}`, arg.amount, arg.token)
+        deleteItem(`${localUrl}`, arg.amount, arg.token)
           .then(res => {
             if (res.status === 401 && res.code === "invalid_token") {
               context.dispatch('logout', res.code , { root: true });
@@ -133,7 +154,15 @@ export default {
     },
 
     getItems(context, arg) {
-      getItems(context.getters['url'], arg.token)
+      let query = '';
+      if (localStorage.getItem('id')) {
+        query = {
+          id: localStorage.getItem('id'),
+        }
+      }
+      context.commit('setUrl', query, { root: true });
+      let localUrl = `${context.getters['url']}${context.rootGetters.url}`;
+      getItems(localUrl, arg.token)
         .then(items => {
           if (items.status === 401 && items.code === "invalid_token") {
             context.dispatch('logout', items.code , { root: true });

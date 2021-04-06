@@ -59,19 +59,33 @@ export default {
 
   actions: {
     getItems(context) {
+      let query = {
+        count: context.getters['perPage'],
+        page: context.getters['page'],
+      };
       if (context.getters['filter']) {
-        getItems(`${context.getters['url']}?count=${context.getters['perPage']}&page=${context.getters['page']}&filter=${context.getters['filter']}`)
-          .then(data => {
-            context.commit('setItems', data.items);
-            context.commit('setPages', data.pages);
-          });
-      } else {
-        getItems(`${context.getters['url']}?count=${context.getters['perPage']}&page=${context.getters['page']}`)
-          .then(data => {
-            context.commit('setItems', data.items);
-            context.commit('setPages', data.pages);
-          });
+        query.filter = context.getters['filter']
       }
+      context.commit('setUrl', query, { root: true });
+      let localUrl = `${context.getters['url']}${context.rootGetters.url}`;
+      getItems(localUrl)
+        .then(data => {
+          context.commit('setItems', data.items);
+          context.commit('setPages', data.pages);
+        });
+      // if (context.getters['filter']) {
+      //   getItems(`${context.getters['url']}?count=${context.getters['perPage']}&page=${context.getters['page']}&filter=${context.getters['filter']}`)
+      //     .then(data => {
+      //       context.commit('setItems', data.items);
+      //       context.commit('setPages', data.pages);
+      //     });
+      // } else {
+      //   getItems(`${context.getters['url']}?count=${context.getters['perPage']}&page=${context.getters['page']}`)
+      //     .then(data => {
+      //       context.commit('setItems', data.items);
+      //       context.commit('setPages', data.pages);
+      //     });
+      // }
     },
 
     setAllStates(context, arg) {

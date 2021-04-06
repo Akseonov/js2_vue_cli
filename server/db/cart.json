@@ -1,21 +1,13 @@
 {
-  "total": 364,
-  "count": 7,
+  "total": 468,
+  "count": 9,
   "contents": [
     {
       "product_id": 2,
       "name": "MANGO PEOPLE T-SHIRT",
       "price": "52.00",
-      "amount": 5,
+      "amount": 4,
       "img": "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/feature_item_3.jpg",
-      "rating": 4.5
-    },
-    {
-      "product_id": 6,
-      "name": "KIWI PEOPLE T-SHIRT",
-      "price": "52.00",
-      "amount": 1,
-      "img": "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/feature_item_7.jpg",
       "rating": 5
     },
     {
@@ -25,6 +17,14 @@
       "amount": 1,
       "img": "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/feature_item_6.jpg",
       "rating": 3
+    },
+    {
+      "product_id": 3,
+      "name": "AVOCADO PEOPLE T-SHIRT",
+      "price": "52.00",
+      "amount": 4,
+      "img": "https://raw.githubusercontent.com/Akseonov/static/main/psd_1/img/feature_item_4.jpg",
+      "rating": 3.5
     }
   ]
 }
